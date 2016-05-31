@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/TimMurphy/OpenMagic.ErrorTracker.Core#readme",
   "devDependencies": {
+    "del": "^2.2.0",
     "mkdirp": "^0.5.1",
     "npm-msbuild": "git+https://github.com/TimMurphy/npm-msbuild.git#v3.0.0",
     "npm-nuget": "git+https://github.com/TimMurphy/npm-nuget.git#v3.1.0"
