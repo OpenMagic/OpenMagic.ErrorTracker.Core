@@ -1,0 +1,33 @@
+{
+  "name": "openmagic.errortracker.core",
+  "version": "1.0.0",
+  "description": "Core library for OpenMagic.ErrorTracker projects.",
+  "main": "OpenMagic.ErrorTracker.Core.sln",
+  "scripts": {
+    "compile": "npm-msbuild /property:Configuration=Release /verbosity:minimal",
+    "clean": "node ./scripts/clean.js",
+    "build": "npm run clean && npm run compile && npm run package",
+    "package": "node ./scripts/package.js",
+    "test": "test.cmd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimMurphy/OpenMagic.ErrorTracker.Core.git"
+  },
+  "keywords": [
+    "error",
+    "tracker",
+    "tracking"
+  ],
+  "author": "Tim Murphy <tim@26tp.com> (https://timmurphy.it)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TimMurphy/OpenMagic.ErrorTracker.Core/issues"
+  },
+  "homepage": "https://github.com/TimMurphy/OpenMagic.ErrorTracker.Core#readme",
+  "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "npm-msbuild": "git+https://github.com/TimMurphy/npm-msbuild.git#v3.0.0",
+    "npm-nuget": "git+https://github.com/TimMurphy/npm-nuget.git#v3.1.0"
+  }
+}

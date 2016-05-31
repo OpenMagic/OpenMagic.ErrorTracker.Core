@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>OpenMagic.ErrorTracker.Core</id>
+    <version>$version$</version>
+    <authors>Tim Murphy</authors>
+    <owners>Tim Murphy</owners>
+    <licenseUrl>https://raw.githubusercontent.com/TimMurphy/OpenMagic.ErrorTracker.Core/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/TimMurphy/OpenMagic.ErrorTracker.Core</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Core library for OpenMagic.ErrorTracker projects.</description>
+    <releaseNotes>See https://github.com/TimMurphy/OpenMagic.ErrorTracker.Core/commits/master</releaseNotes>
+    <copyright>Copyright (c) 2016 Tim Murphy</copyright>
+    <tags>error tracker tracking</tags>
+    <dependencies>
+      <dependency id="Mindscape.Raygun4Net.Core" version="5.3.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="source\OpenMagic.ErrorTracker.Core\bin\Release\OpenMagic.ErrorTracker.Core.dll" target="lib\net461" />
+    <file src="source\OpenMagic.ErrorTracker.Core\bin\Release\OpenMagic.ErrorTracker.Core.pdb" target="lib\net461" />
+    <file src="source\OpenMagic.ErrorTracker.Core\**\*.cs" target="src" />
+  </files>
+</package>
