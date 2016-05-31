@@ -8,6 +8,7 @@
     "clean": "node ./scripts/clean.js",
     "build": "npm run clean && npm run compile && npm run package",
     "package": "node ./scripts/package.js",
+    "postinstall": "npm-nuget restore",
     "test": "test.cmd"
   },
   "repository": {
