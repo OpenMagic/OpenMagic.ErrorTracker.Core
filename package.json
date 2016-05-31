@@ -6,7 +6,7 @@
   "scripts": {
     "compile": "npm-msbuild /property:Configuration=Release /verbosity:minimal",
     "clean": "node ./scripts/clean.js",
-    "build": "npm run clean && npm run compile && npm run package",
+    "build": "npm install && npm run clean && npm run compile && npm run package",
     "package": "node ./scripts/package.js",
     "postinstall": "npm-nuget restore",
     "test": "test.cmd"
