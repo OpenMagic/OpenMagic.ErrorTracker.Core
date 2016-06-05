@@ -56,7 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Packages\LibLog.4.2\LibLog.cs" />
-    <Compile Include="Contstants.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Events\IEvent.cs" />
     <Compile Include="Events\RaygunMessageReceived.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
