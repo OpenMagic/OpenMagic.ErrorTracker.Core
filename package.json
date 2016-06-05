@@ -18,7 +18,7 @@
     "clean": "rimraf artifacts && mkdirp artifacts",
     "compile": "npm-msbuild /property:Configuration=Release /verbosity:minimal",
     "package": "node scripts/package.js",
-    "prepublish": "echo Use publish.cmd or npm run publish-package && exit 1",
+    "publish": "echo Use publish.cmd or npm run publish-package && exit 1",
     "prepublish-package": "node scripts/prepublish-package.js",
     "publish-package": "git push && git push --tags && Successfully published ",
     "postinstall": "npm-nuget restore",
