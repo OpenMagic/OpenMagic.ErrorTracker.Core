@@ -20,7 +20,7 @@
     "package": "node scripts/package.js",
     "publish": "echo Use publish.cmd or npm run publish-package && exit 1",
     "prepublish-package": "node scripts/prepublish-package.js",
-    "publish-package": "git push && git push --tags && Successfully published ",
+    "publish-package": "git push && git push --tags && echo Successfully published package.",
     "postinstall": "npm-nuget restore",
     "pretest": "npm run clean && npm run compile",
     "test": "echo No tests for this package. Naugthy boy :)",
