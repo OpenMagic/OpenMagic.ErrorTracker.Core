@@ -3,7 +3,6 @@ using Mindscape.Raygun4Net.Messages;
 
 namespace OpenMagic.ErrorTracker.Core.Events
 {
-    [Serializable]
     public class RaygunMessageReceived : IEvent
     {
         public RaygunMessageReceived(string apiKey, RaygunMessage raygunMessage)
