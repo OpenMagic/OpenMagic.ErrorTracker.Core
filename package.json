@@ -1,6 +1,6 @@
 {
   "name": "openmagic.errortracker.core",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Core library for OpenMagic.ErrorTracker projects.",
   "main": "OpenMagic.ErrorTracker.Core.sln",
   "watch": {
