@@ -4,7 +4,7 @@
   "description": "Core library for OpenMagic.ErrorTracker projects.",
   "main": "OpenMagic.ErrorTracker.Core.sln",
   "watch": {
-    "build": {
+    "test": {
       "patterns": [
         "source",
         "tests"
@@ -14,19 +14,13 @@
     }
   },
   "scripts": {
-    "build": "npm test && npm run package",
-    "clean": "rimraf artifacts && mkdirp artifacts",
-    "compile": "npm-msbuild /property:Configuration=Release /verbosity:minimal",
-    "package": "node scripts/package.js",
     "publish": "echo Use publish.cmd or npm run publish-package && exit 1",
-    "prepublish-package": "node scripts/prepublish-package.js",
     "publish-package": "git push && git push --tags && echo Successfully published package.",
     "postinstall": "npm-nuget restore && npm-nuget install xunit.runner.console -OutputDirectory ./packages -ExcludeVersion -Version 2.1",
-    "pretest": "npm run clean && npm run compile",
-    "test": "node scripts/test.js",
-    "preversion": "npm test",
-    "version": "node scripts/version.js",
-    "postversion": "npm run pretest && npm run package",
+    "test": "run-task test",
+    "preversion": "run-task npm_preversion",
+    "version": "run-task npm_version",
+    "postversion": "run-task npm_postversion -- skipTests",
     "watch": "npm-watch"
   },
   "repository": {
@@ -47,8 +41,8 @@
   "devDependencies": {
     "del": "^2.2.0",
     "mkdirp": "^0.5.1",
-    "npm-msbuild": "git+https://github.com/TimMurphy/npm-msbuild.git#v3.0.1",
-    "npm-nuget": "git+https://github.com/TimMurphy/npm-nuget.git#v3.1.1",
+    "npm-msbuild": "git+https://github.com/TimMurphy/npm-msbuild.git#v3.0.3",
+    "npm-nuget": "git+https://github.com/TimMurphy/npm-nuget.git#v3.1.3",
     "npm-watch": "^0.1.4",
     "replace": "^0.3.0"
   },
