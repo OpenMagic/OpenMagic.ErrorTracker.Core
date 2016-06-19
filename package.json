@@ -1,6 +1,6 @@
 {
   "name": "openmagic.errortracker.core",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Core library for OpenMagic.ErrorTracker projects.",
   "main": "OpenMagic.ErrorTracker.Core.sln",
   "watch": {
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "publish": "echo Use publish.cmd or npm run publish-package && exit 1",
-    "postinstall": "run-task npm_postinstall", 
+    "postinstall": "run-task npm_postinstall",
     "test": "run-task test",
     "preversion": "run-task npm_preversion",
     "version": "run-task npm_version",
