@@ -5,6 +5,10 @@ const config = {
     artifacts: './artifacts',
     configuration: configuration,
     constants: './source/OpenMagic.ErrorTracker.Core/Constants.cs',
+    specflow: {
+        cmd: `"${__dirname}/packages/SpecFlow.2.1.0/tools/specflow.exe"`,
+        project: `"${__dirname}/tests/OpenMagic.ErrorTracker.Core.Specifications/OpenMagic.ErrorTracker.Core.Specifications.csproj"`
+    },
     xunit: {
         cmd: `"${__dirname}/packages/xunit.runner.console/tools/xunit.console.exe"`,
         assemblies: `"${__dirname}/tests/OpenMagic.ErrorTracker.Core.Specifications/bin/${configuration}/OpenMagic.ErrorTracker.Core.Specifications.dll"`
@@ -78,6 +82,16 @@ target.test = function (args) {
     runningTask('test');
     shell.exec(`${config.xunit.cmd} ${config.xunit.assemblies}`);
     completedTask('test');
+}
+
+// This script is called by npm after it runs it install command.
+target.npm_postinstall = function () {
+    shell.exec(`npm-nuget restore`);
+    shell.exec(`npm-nuget install xunit.runner.console -OutputDirectory ./packages -ExcludeVersion -Version 2.1`);
+
+    console.log('Generating SpecFlow unit test classes...');    
+    shell.exec(`${config.specflow.cmd} generateall ${config.specflow.project}`);
+    console.log('Successfully generated SpecFlow unit test classes.');    
 }
 
 // This script is called by npm before it runs its version command.

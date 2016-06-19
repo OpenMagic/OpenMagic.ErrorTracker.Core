@@ -15,7 +15,7 @@
   },
   "scripts": {
     "publish": "echo Use publish.cmd or npm run publish-package && exit 1",
-    "postinstall": "npm-nuget restore && npm-nuget install xunit.runner.console -OutputDirectory ./packages -ExcludeVersion -Version 2.1",
+    "postinstall": "run-task npm_postinstall", 
     "test": "run-task test",
     "preversion": "run-task npm_preversion",
     "version": "run-task npm_version",
