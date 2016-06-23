@@ -1,7 +1,7 @@
 ﻿using System;
 using FluentAssertions;
 using Newtonsoft.Json.Linq;
-using OpenMagic.ErrorTracker.Core.Serialization;
+using OpenMagic.ErrorTracker.Core.Infrastructure.Serialization;
 using TechTalk.SpecFlow;
 
 namespace OpenMagic.ErrorTracker.Core.Specifications.Features.Serialization.Steps

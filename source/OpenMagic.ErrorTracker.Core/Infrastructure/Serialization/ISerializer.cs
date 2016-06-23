@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Mime;
 
-namespace OpenMagic.ErrorTracker.Core.Serialization
+namespace OpenMagic.ErrorTracker.Core.Infrastructure.Serialization
 {
     /// <summary>
     ///     Provides methods for converting between common language runtime types and string types.

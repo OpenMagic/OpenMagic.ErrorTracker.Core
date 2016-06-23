@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Specialized;
 using System.Net.Mime;
 using Newtonsoft.Json;
-using OpenMagic.ErrorTracker.Core.Extensions;
+using OpenMagic.ErrorTracker.Core.Infrastructure.Extensions;
 
-namespace OpenMagic.ErrorTracker.Core.Serialization
+namespace OpenMagic.ErrorTracker.Core.Infrastructure.Serialization
 {
     public class Serializer : ISerializer
     {

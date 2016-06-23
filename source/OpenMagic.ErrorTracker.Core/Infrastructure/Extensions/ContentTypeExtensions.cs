@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Mime;
 
-namespace OpenMagic.ErrorTracker.Core.Extensions
+namespace OpenMagic.ErrorTracker.Core.Infrastructure.Extensions
 {
     public static class ContentTypeExtensions
     {
