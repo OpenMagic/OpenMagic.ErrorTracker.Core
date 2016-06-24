@@ -48,8 +48,12 @@ target.compile = function () {
 
 target.package = function () {
     target.test();
+
     runningTask('package');
-    nuget.exec(`pack ./OpenMagic.ErrorTracker.Core.nuspec -OutputDirectory .\\artifacts -Version ${npmPackage.version} -Symbols`);
+
+    const version = npmVersionToNuGetVersion(process.env.npm_package_version);
+    nuget.exec(`pack ./OpenMagic.ErrorTracker.Core.nuspec -OutputDirectory .\\artifacts -Version ${version} -Symbols`);
+
     completedTask('package');
 }
 
@@ -89,9 +93,9 @@ target.npm_postinstall = function () {
     shell.exec(`npm-nuget restore`);
     shell.exec(`npm-nuget install xunit.runner.console -OutputDirectory ./packages -ExcludeVersion -Version 2.1`);
 
-    console.log('Generating SpecFlow unit test classes...');    
+    console.log('Generating SpecFlow unit test classes...');
     shell.exec(`${config.specflow.cmd} generateall ${config.specflow.project}`);
-    console.log('Successfully generated SpecFlow unit test classes.');    
+    console.log('Successfully generated SpecFlow unit test classes.');
 }
 
 // This script is called by npm before it runs its version command.
@@ -137,15 +141,39 @@ function stageChanges() {
 }
 
 function updateAssemblyInfo() {
-    const version = process.env.npm_package_version;
+    const version = npmVersionToAssemblyVersion(process.env.npm_package_version);
 
     replace({
         regex: /public const string Version = \"\d+\.\d+\.\d+\.\d\";/,
-        replacement: `public const string Version = \"${version}.0\";`,
+        replacement: `public const string Version = \"${version}\";`,
         paths: [config.constants],
         recursive: false,
         silent: false,
     });
+}
+
+function npmVersionToAssemblyVersion(version) {
+    const hyphen = version.indexOf('-');
+
+    if (hyphen === -1) {
+        return version + '.0';
+    }
+
+    const preReleaseVersion = version.substring(hyphen + 1);
+
+    return `${version.substring(0, hyphen)}.${preReleaseVersion}`;
+}
+
+function npmVersionToNuGetVersion(version) {
+    const hyphen = version.indexOf('-');
+
+    if (hyphen === -1) {
+        return version + '.0';
+    }
+
+    const preReleaseVersion = version.substring(hyphen + 1);
+
+    return `${version.substring(0, hyphen)}-pre${preReleaseVersion}`;
 }
 
 function writePublishUsage() {
