@@ -8,7 +8,7 @@
             public const string FileVersion = Version;
             public const string Product = "OpenMagic.ErrorTracker";
             public const string Title = Product;
-            public const string Version = "1.4.1.0";
+            public const string Version = "2.0.0.0";
         }
     }
 }
