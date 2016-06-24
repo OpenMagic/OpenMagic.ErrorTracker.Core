@@ -51,7 +51,7 @@ target.package = function () {
 
     runningTask('package');
 
-    const version = npmVersionToNuGetVersion(process.env.npm_package_version);
+    const version = npmVersionToNuGetVersion(npmPackage.version);
     nuget.exec(`pack ./OpenMagic.ErrorTracker.Core.nuspec -OutputDirectory .\\artifacts -Version ${version} -Symbols`);
 
     completedTask('package');
