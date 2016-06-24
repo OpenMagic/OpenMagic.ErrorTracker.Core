@@ -11,5 +11,10 @@ namespace OpenMagic.ErrorTracker.Core.Events
         ///     Gets the event identifier.
         /// </summary>
         Guid EventId { get; }
+
+        /// <summary>
+        ///     Gets when the occurred (UTC).
+        /// </summary>
+        DateTime Occurred { get; }
     }
 }

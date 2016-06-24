@@ -21,13 +21,24 @@ namespace OpenMagic.ErrorTracker.Core.Events
         /// </summary>
         /// <param name="eventId">The event identifier.</param>
         protected EventBase(Guid eventId)
+            : this(eventId, DateTime.UtcNow)
+        {
+        }
+
+        private EventBase(Guid eventId, DateTime occurred)
         {
             EventId = eventId;
+            Occurred = occurred;
         }
 
         /// <summary>
         ///     Gets the event identifier.
         /// </summary>
         public Guid EventId { get; }
+
+        /// <summary>
+        ///     Gets when the occurred (UTC).
+        /// </summary>
+        public DateTime Occurred { get; }
     }
 }
