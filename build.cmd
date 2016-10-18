@@ -1,3 +1,3 @@
 @echo off
 rem Clean, compile, test & package the solution
-call run-task build
+call %~dp0scripts\run-task build

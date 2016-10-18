@@ -15,11 +15,11 @@
   },
   "scripts": {
     "publish": "echo Use publish.cmd or npm run publish-package && exit 1",
-    "postinstall": "run-task npm_postinstall",
-    "test": "run-task test",
-    "preversion": "run-task npm_preversion",
-    "version": "run-task npm_version",
-    "postversion": "run-task npm_postversion -- skipTests",
+    "postinstall": ".\\scripts\\run-task npm_postinstall",
+    "test": ".\\scripts\\run-task.cmd test",
+    "preversion": ".\\scripts\\run-task npm_preversion",
+    "version": ".\\scripts\\run-task npm_version",
+    "postversion": ".\\scripts\\run-task npm_postversion -- skipTests",
     "watch": "npm-watch"
   },
   "repository": {

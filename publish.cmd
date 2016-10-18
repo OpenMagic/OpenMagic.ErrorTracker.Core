@@ -1,3 +1,3 @@
 @echo off
 rem Publish the NuGet package 
-call node tasks publish -- %*
+call node %~dp0scripts\tasks publish -- %*

@@ -2,22 +2,22 @@
 
 const configuration = 'Release';
 const config = {
-    artifacts: './artifacts',
+    artifacts: `${__dirname}/../artifacts`,
     configuration: configuration,
-    constants: './source/OpenMagic.ErrorTracker.Core/Constants.cs',
+    constants: `${__dirname}/../source/OpenMagic.ErrorTracker.Core/Constants.cs`,
     specflow: {
-        cmd: `"${__dirname}/packages/SpecFlow.2.1.0/tools/specflow.exe"`,
-        project: `"${__dirname}/tests/OpenMagic.ErrorTracker.Core.Specifications/OpenMagic.ErrorTracker.Core.Specifications.csproj"`
+        cmd: `"${__dirname}/../packages/SpecFlow.2.1.0/tools/specflow.exe"`,
+        project: `"${__dirname}/../tests/OpenMagic.ErrorTracker.Core.Specifications/OpenMagic.ErrorTracker.Core.Specifications.csproj"`
     },
     xunit: {
-        cmd: `"${__dirname}/packages/xunit.runner.console/tools/xunit.console.exe"`,
-        assemblies: `"${__dirname}/tests/OpenMagic.ErrorTracker.Core.Specifications/bin/${configuration}/OpenMagic.ErrorTracker.Core.Specifications.dll"`
+        cmd: `"${__dirname}/../packages/xunit.runner.console/tools/xunit.console.exe"`,
+        assemblies: `"${__dirname}/../tests/OpenMagic.ErrorTracker.Core.Specifications/bin/${configuration}/OpenMagic.ErrorTracker.Core.Specifications.dll"`
     }
 };
 
 require('shelljs/make');
 
-const npmPackage = require('./package.json');
+const npmPackage = require('../package.json');
 const mkdirp = require('mkdirp');
 const msbuild = require('npm-msbuild');
 const nuget = require('npm-nuget');
